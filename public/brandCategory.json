@@ -1,0 +1,33 @@
+[
+    {
+      "id1": 1,
+      "img": "https://gadgetbd.com/wp-content/uploads/2023/06/Starlight.jpg",
+      "name": "Macbook"
+    },
+    {
+      "id1": 2,
+      "img": "https://gadgetbd.com/wp-content/uploads/2023/09/iPhone-15-Pro-Max.jpg",
+      "name": "Iphone"
+    },
+    {
+      "id1": 3,
+      "img": "https://gadgetbd.com/wp-content/uploads/2022/11/iPad-Pro-12.9-Inch-M2-2022-Silver.png",
+      "name": "Ipad"
+    },
+    {
+      "id1": 4,
+      "img": "https://gadgetbd.com/wp-content/uploads/2023/01/Apple-Watch-Ultra-Orange-1.jpg",
+      "name": "iWatch"
+    },
+    {
+      "id1": 5,
+      "img": "https://gadgetbd.com/wp-content/uploads/2021/10/MME73.jpg",
+      "name": "Airpods"
+    },
+    {
+      "id1": 6,
+      "img": "https://khatabook-assets.s3.amazonaws.com/media/post/Fo9MHMwc0JSm9lh19hsrO__PYW1ChJSx2N06mcHJgQyPKB76UvuNjjOhNlhXiRjJuOHker5MfE5RdHwwMpGDW1pQA4O-dzhBXBIUQZ-IFum1wdBlpVrRIBRyvWiatTVA7GN41HtqBGy4gSa0NMdb6NDPoE80fWRa3CZETRRp4LDYzhK21PI2twatJaRd.webp",
+      "name": "Accessories"
+    }
+  ]
+  

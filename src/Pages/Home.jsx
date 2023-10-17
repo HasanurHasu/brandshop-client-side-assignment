@@ -1,9 +1,14 @@
+import Banner from "./Banner";
+import BrandItems from "./BrandItems";
+import Footer from "./Footer";
 
 
 const Home = () => {
     return (
         <div className="max-w-6xl mx-auto">
-            <h1 className="text-center text-3xl font-bold">This is home page</h1>
+            <Banner></Banner>
+            <BrandItems></BrandItems>
+            <Footer></Footer>
         </div>
     );
 };
