@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className="w-96 mx-auto">
+        <div className="w-80 mx-auto">
             <h1 className="my-6 text-center text-3xl font-bold">Login Now!</h1>
             <form>
                 <div className="flex flex-col gap-4">
