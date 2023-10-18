@@ -10,6 +10,8 @@ import ErrorPage from './Pages/ErrorPage';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
+import BrandDetails from './Pages/BrandDetails';
+import AddProduct from './Pages/AddProduct';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/brandDetails/:id',
+        element: <BrandDetails></BrandDetails>
+      },
+      {
+        path: '/addProducts',
+        element: <AddProduct></AddProduct>
       }
     ]
   },
