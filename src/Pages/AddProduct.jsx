@@ -50,7 +50,7 @@ const AddProduct = () => {
                     <div className="grid grid-cols-2 gap-5 mt-10">
                         <div>
                             <h3 className="label-text text-xl mb-3">Name</h3>
-                            <input type="name" name="name" placeholder="Enter Coffee name" className="p-[10px] rounded-md w-full" />
+                            <input type="name" name="name" placeholder="Enter Product Name" className="p-[10px] rounded-md w-full" />
                         </div>
                         <div>
                             <h3 className="label-text text-xl mb-3">Brand Name</h3>
