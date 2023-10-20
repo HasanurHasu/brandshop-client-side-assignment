@@ -28,7 +28,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <div className="dropdown">
+                    <label tabIndex={0} className="m-1">
+                        <div className="avatar">
+                            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                    </label>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
+                        <li>Item 1</li>
+                        <li>Item 1</li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

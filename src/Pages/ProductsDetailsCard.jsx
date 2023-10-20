@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ProductsDetailsCard = ({ product }) => {
-    const { _id, name, brand, type, price, description, rating, image } = product;
+    const { _id, name, brand, type, price, image } = product;
     return (
 
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -24,9 +24,11 @@ const ProductsDetailsCard = ({ product }) => {
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                 </div>
-                <div className='flex justify-between w-full'>
-                    <Link to={`/productDetails/${_id}`}><button className="btn btn-primary">Details</button></Link>
-                    <button className="btn btn-primary">Update</button>
+                
+                <div className="flex justify-between w-full">
+                    <Link to={`/productDetails/${_id}`}><button className="py-2 px-6 bg-blue-600 text-white font-semibold">Details</button></Link>
+
+                    <button className="py-2 px-6 bg-orange-500 text-white font-semibold">Update</button>
                 </div>
 
             </div>
