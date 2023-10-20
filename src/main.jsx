@@ -14,6 +14,7 @@ import BrandDetails from './Pages/BrandDetails';
 import AddProduct from './Pages/AddProduct';
 import Provider from './Provider/Provider';
 import ProductsDetails from './Pages/ProductsDetails';
+import UpdateProduct from './Pages/UpdateProduct';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/productDetails/:id',
         element: <ProductsDetails></ProductsDetails>
+      },
+      {
+        path: 'productUpdate/:id',
+        element: <UpdateProduct></UpdateProduct>
       }
     ]
   },

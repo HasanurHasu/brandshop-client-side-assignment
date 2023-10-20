@@ -28,7 +28,7 @@ const ProductsDetailsCard = ({ product }) => {
                 <div className="flex justify-between w-full">
                     <Link to={`/productDetails/${_id}`}><button className="py-2 px-6 bg-blue-600 text-white font-semibold">Details</button></Link>
 
-                    <button className="py-2 px-6 bg-orange-500 text-white font-semibold">Update</button>
+                    <Link to={`/productUpdate/${_id}`}><button className="py-2 px-6 bg-orange-500 text-white font-semibold">Update</button></Link>
                 </div>
 
             </div>
