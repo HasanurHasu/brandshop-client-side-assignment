@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../Provider/Provider";
+import Swal from "sweetalert2";
 
 const ProductsDetails = () => {
+    const {user} = useContext(AuthContext);
+    const userEmail = user.email;
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     console.log(product);
@@ -12,6 +16,32 @@ const ProductsDetails = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
+
+    const handleAddToCard = () => {
+
+        const addToCard = {name, brand, type, price, description, image, userEmail };
+        console.log(addToCard);
+        fetch('http://localhost:5000/addToCard', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addToCard)
+        })
+        .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Do you want to continue',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+
+    }
     return (
         <div className="max-w-6xl mx-auto">
             <div className="hero">
@@ -28,7 +58,7 @@ const ProductsDetails = () => {
                         <div className="space-y-3">
                             <p className="">{description}</p>
                             <div className="flex gap-10">
-                                <button className="py-2 px-4 bg-blue-600 text-white font-semibold">Add to Card</button>
+                                <button onClick={handleAddToCard} className="py-2 px-4 bg-blue-600 text-white font-semibold">Add to Card</button>
                                 <button className="py-2 px-6 bg-orange-500 text-white font-semibold">By Now</button>
                             </div>
                         </div>
