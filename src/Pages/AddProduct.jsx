@@ -14,7 +14,7 @@ const AddProduct = () => {
         const rating = form.rating.value;
         const image = form.image.value;
 
-        const newProduct = {name, brand, type, price, description, rating, image}
+        const newProduct = { name, brand, type, price, description, rating, image }
         console.log(newProduct);
 
         fetch('http://localhost:5000/products', {
@@ -24,21 +24,21 @@ const AddProduct = () => {
             },
             body: JSON.stringify(newProduct)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Do you want to continue',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Do you want to continue',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
 
-                  
-            }
-            form.reset()
-        })
+
+                }
+                form.reset()
+            })
 
     }
     return (
@@ -58,7 +58,19 @@ const AddProduct = () => {
                         </div>
                         <div>
                             <h3 className="label-text text-xl mb-3">Products Type</h3>
-                            <input type="name" name="type" placeholder="Enter Products Type" className="p-[10px] rounded-md w-full" />
+                            <div >
+                                <select id="ddlViewBy" name="type" className="p-[10px] rounded-md w-full">
+                                    <option value="">Select One</option>
+                                    <option value="Macbook">Macbook</option>
+                                    <option value="Iphone">Iphone</option>
+                                    <option value="Ipad">Ipad</option>
+                                    <option value="iWatch">iWatch</option>
+                                    <option value="Airpods">Airpods</option>
+                                    <option value="Accessories">Accessories</option>
+                                </select>
+                            </div>
+
+                            {/* <input type="name" name="type" placeholder="Enter Products Type" className="p-[10px] rounded-md w-full" /> */}
                         </div>
                         <div>
                             <h3 className="label-text text-xl mb-3">Price</h3>
@@ -76,8 +88,8 @@ const AddProduct = () => {
                             <h3 className="label-text text-xl mb-3">Image</h3>
                             <input type="name" name="image" placeholder="Enter Image URL" className="p-[10px] rounded-md w-full" />
                         </div>
-                       <input type="submit" className="w-full py-[10px] text-center font-medium bg-[#D2B48C] col-span-2 border text-lg rounded-md" value="Add Products" />
-                        
+                        <input type="submit" className="w-full py-[10px] text-center font-medium bg-[#D2B48C] col-span-2 border text-lg rounded-md" value="Add Products" />
+
                     </div>
                 </form>
             </div>
