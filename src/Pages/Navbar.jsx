@@ -1,8 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../Provider/Provider";
 
 
 const Navbar = () => {
+
+    const { user } = useContext(AuthContext);
+
+    console.log(user?.email);
+
     const links = <>
         <NavLink className="py-2 px-5" to='/'>Home</NavLink>
         <NavLink className="py-2 px-5" to='/register'>Register</NavLink>
@@ -28,19 +35,29 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="dropdown">
-                    <label tabIndex={0} className="m-1">
-                        <div className="avatar">
-                            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
+                {
+                    user ? <>
+                        <div className="dropdown">
+                            <label tabIndex={0} className="m-1">
+                                <div className="avatar">
+                                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
+                                <li>Item 1</li>
+                                <li>Item 1</li>
+                            </ul>
                         </div>
-                    </label>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
-                        <li>Item 1</li>
-                        <li>Item 1</li>
-                    </ul>
-                </div>
+                    </>
+                    :
+                    <>
+                    <button>Login</button>
+                    
+                    </>
+                }
+
             </div>
         </div>
     );

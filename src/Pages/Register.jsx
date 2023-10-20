@@ -1,14 +1,41 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/Provider";
 
 
 const Register = () => {
+    
+
+    const {userRegister} = useContext(AuthContext);
+
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const password1 = form.password1.value;
+        console.log(email, password);
+        if(!(password==password1)){
+         return  alert('password do not match')
+        }else{
+            userRegister(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error.message)
+            })
+        }
+
+    }
+
     return (
         <div className="w-80 mx-auto">
             <h1 className="my-6 text-center text-3xl font-bold">Register Now!</h1>
-            <form>
+            <form onSubmit={handleRegister}>
                 <div className="flex flex-col gap-4">
                     <input type="email" name="email" placeholder="Your Email" className="input input-bordered" />
-                    <input type="password" name="password" placeholder="Create Password" className="input input-bordered" />
+                    <input type="password" name="password1" placeholder="Create Password" className="input input-bordered" />
                     <input type="password" name="password" placeholder="Confirm Password" className="input input-bordered" />
                     <input type="submit" value="Register" className="bg-blue-600 text-white text-lg py-2 rounded-md" />
                     <p className="text-center ">Already have an account? <Link to='/login' className="text-blue-600">login</Link></p>
