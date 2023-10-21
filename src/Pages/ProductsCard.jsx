@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const ProductsCard = ({ product, count }) => {
-    console.log(count);
     const { _id, name, description, image } = product;
     return (
         <div id={`item${count + 1}`} className="carousel-item w-full">

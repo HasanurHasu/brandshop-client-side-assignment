@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from "react";
 import auth from '../Firebase/firebase.config';
@@ -12,6 +12,14 @@ const Provider = ({ children }) => {
     const userRegister = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     };
+
+    const userLoginWithEmail = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const logout = () => {
+        return signOut(auth)
+    }
 
     const [products, setProducts] = useState([]);
 
@@ -35,7 +43,9 @@ const Provider = ({ children }) => {
     const info = {
         user,
         products,
-        userRegister
+        userRegister,
+        userLoginWithEmail,
+        logout
 
     }
     return (

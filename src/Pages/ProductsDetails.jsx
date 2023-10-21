@@ -5,10 +5,9 @@ import Swal from "sweetalert2";
 
 const ProductsDetails = () => {
     const {user} = useContext(AuthContext);
-    const userEmail = user.email;
+    const userEmail = user?.email;
     const { id } = useParams();
     const [product, setProduct] = useState([]);
-    console.log(product);
     const {  name, brand, type, price, description, image } = product;
 
     useEffect(() => {
@@ -31,7 +30,7 @@ const ProductsDetails = () => {
         .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount > 0) {
+                if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Do you want to continue',

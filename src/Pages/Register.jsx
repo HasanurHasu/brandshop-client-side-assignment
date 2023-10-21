@@ -1,12 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/Provider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
-    
 
-    const {userRegister} = useContext(AuthContext);
+
+    const { userRegister } = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -15,18 +17,27 @@ const Register = () => {
         const password = form.password.value;
         const password1 = form.password1.value;
         console.log(email, password);
-        if(!(password==password1)){
-         return  alert('password do not match')
-        }else{
-            userRegister(email, password)
+
+        if (password.length < 6) {
+            toast.error('Password length under 6')
+            return;
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            toast.error('must be capital letter and special  character')
+            return;
+        }
+
+        if (!(password == password1)) {
+            toast.error('Password do not match.')
+            return;
+        }
+        userRegister(email, password)
             .then(result => {
                 console.log(result.user);
             })
             .catch(error => {
                 console.error(error.message)
             })
-        }
-
     }
 
     return (
@@ -61,6 +72,18 @@ const Register = () => {
                     </div>
                 </button>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };

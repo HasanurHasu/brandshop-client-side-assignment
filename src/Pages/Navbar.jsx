@@ -6,9 +6,7 @@ import { AuthContext } from "../Provider/Provider";
 
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
-
-    console.log(user?.email);
+    const { user, logout } = useContext(AuthContext);
 
     const links = <>
         <NavLink className="py-2 px-5" to='/'>Home</NavLink>
@@ -38,17 +36,17 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <>
-                        <div className="dropdown">
+                        <div className="dropdown dropdown-bottom dropdown-end">
                             <label tabIndex={0} className="m-1">
                                 <div className="avatar">
                                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        <img src="https://static.thenounproject.com/png/363640-200.png" />
                                     </div>
                                 </div>
                             </label>
                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
-                                <li>Item 1</li>
-                                <li>Item 1</li>
+                                <li><button>Profile</button></li>
+                                <li><button onClick={logout} >Logout</button></li>
                             </ul>
                         </div>
                     </>

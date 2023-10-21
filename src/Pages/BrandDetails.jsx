@@ -9,8 +9,6 @@ const BrandDetails = () => {
     const { products } = useContext(AuthContext)
 
     const { id } = useParams()
-    console.log(id);
-    console.log(products);
 
     const filterProducts = products.filter(product => product.type.toLowerCase() === id.toLowerCase());
     return (

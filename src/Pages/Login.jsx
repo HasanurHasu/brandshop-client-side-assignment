@@ -1,12 +1,31 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/Provider";
 
 
 const Login = () => {
+
+    const {userLoginWithEmail} = useContext(AuthContext);
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        userLoginWithEmail(email, password)
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+    }
     
     return (
         <div className="w-80 mx-auto">
             <h1 className="my-6 text-center text-3xl font-bold">Login Now!</h1>
-            <form>
+            <form onSubmit={handleLogin}>
                 <div className="flex flex-col gap-4">
                     <input type="email" name="email" placeholder="Your Email" className="input input-bordered" />
                     <input type="password" name="password" placeholder="Your Password" className="input input-bordered" />

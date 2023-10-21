@@ -15,7 +15,7 @@ import AddProduct from './Pages/AddProduct';
 import Provider from './Provider/Provider';
 import ProductsDetails from './Pages/ProductsDetails';
 import UpdateProduct from './Pages/UpdateProduct';
-import MyCard from './Pages/MyCard';
+import AddToCard from './Pages/AddToCard';
 
 const router = createBrowserRouter([
   {
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'myCard',
-        element: <MyCard></MyCard>
+        element: <AddToCard></AddToCard>
       }
     ]
   },
