@@ -34,7 +34,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link><img src="https://assets-global.website-files.com/60673aeb6d3163e7fda75a76/606e052a765e01c5ec1114ae_logo%405x.png" alt="Logo" className="w-44" /></Link>
+                <Link><img src="https://media.licdn.com/dms/image/D4D12AQHwi4jdRd3fQQ/article-cover_image-shrink_600_2000/0/1685279753620?e=2147483647&v=beta&t=7I-pJ0kDQfNl4w-0Ue8aPyol_X-aWOQlzp18NhTldys" alt="Logo" className="w-28" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -48,7 +48,7 @@ const Navbar = () => {
                             <label tabIndex={0} className="m-1">
                                 <div className="avatar">
                                     <div className="w-10 rounded-full">
-                                        <img src="https://static.thenounproject.com/png/363640-200.png" />
+                                        <img src="https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2021/07/08/img_2842_0.jpg" />
                                     </div>
                                 </div>
                             </label>
