@@ -57,7 +57,7 @@ const ProductsDetails = () => {
                         <div className="space-y-3">
                             <p className="">{description}</p>
                             <div className="flex gap-10">
-                                <button onClick={handleAddToCard} className="py-2 px-4 bg-blue-600 text-white font-semibold">Add to Card</button>
+                                <button onClick={handleAddToCard} className="py-2 px-4 bg-[#0066ff] text-white font-semibold">Add to Card</button>
                                 <button className="py-2 px-6 bg-orange-500 text-white font-semibold">By Now</button>
                             </div>
                         </div>

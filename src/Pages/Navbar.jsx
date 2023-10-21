@@ -12,8 +12,6 @@ const Navbar = () => {
         {
             user ? <>
                 <NavLink className="py-2 px-5" to='/'>Home</NavLink>
-                <NavLink className="py-2 px-5" to='/register'>Register</NavLink>
-                <NavLink className="py-2 px-5" to='/login'>Login</NavLink>
                 <NavLink className="py-2 px-5" to='/addProducts'>Add Product</NavLink>
                 <NavLink className="py-2 px-5" to='/myCard'>My Card</NavLink>
             </> :
@@ -21,7 +19,6 @@ const Navbar = () => {
                 <>
                     <NavLink className="py-2 px-5" to='/'>Home</NavLink>
                     <NavLink className="py-2 px-5" to='/register'>Register</NavLink>
-                    <NavLink className="py-2 px-5" to='/login'>Login</NavLink>
                 </>
         }
 
@@ -50,20 +47,20 @@ const Navbar = () => {
                         <div className="dropdown dropdown-bottom dropdown-end">
                             <label tabIndex={0} className="m-1">
                                 <div className="avatar">
-                                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <div className="w-10 rounded-full">
                                         <img src="https://static.thenounproject.com/png/363640-200.png" />
                                     </div>
                                 </div>
                             </label>
                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
                                 <li><button>Profile</button></li>
-                                <li><button onClick={logout} >Logout</button></li>
+                                <li><button onClick={logout}>Logout</button></li>
                             </ul>
                         </div>
                     </>
                         :
                         <>
-                            <Link to='/login'><button>Login</button></Link>
+                            <Link to='/login'><button className="text-white text-md rounded bg-[#0066ff] py-[6px] px-4">Login</button></Link>
 
                         </>
                 }

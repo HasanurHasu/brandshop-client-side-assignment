@@ -12,9 +12,9 @@ const BrandItems = () => {
             .then(data => setBrands(data))
     }, [])
     return (
-        <div className="mt-8">
+        <div className="mt-8 lg:max-w-6xl lg:mx-auto mx-3">
             <h1 className="text-center text-3xl font-bold">Brands Category</h1>
-            <div className="grid grid-cols-3 gap-5 mt-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
                 {
                     brands.map(brand => <BrandCard key={brand.id} brand={brand}></BrandCard>)
                 }

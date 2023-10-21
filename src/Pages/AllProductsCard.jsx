@@ -1,12 +1,10 @@
-
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const ProductsDetailsCard = ({ product }) => {
-    const { _id, name, brand, type, price, image } = product;
+const AllProductsCard = ({ product }) => {
+    const {  name, brand, type, price, image } = product;
     return (
 
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={image} alt="Shoes" className="h-40 rounded-xl" />
             </figure>
@@ -24,21 +22,17 @@ const ProductsDetailsCard = ({ product }) => {
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                 </div>
-                
-                <div className="flex justify-between w-full">
-                    <Link to={`/productDetails/${_id}`}><button className="py-2 px-6 bg-blue-600 text-white font-semibold">Details</button></Link>
-
-                    <Link to={`/productUpdate/${_id}`}><button className="py-2 px-6 bg-orange-500 text-white font-semibold">Update</button></Link>
+                <div>
+                <button className="py-2 px-10 bg-[#0066ff] text-white font-semibold">By Now</button>
                 </div>
-
             </div>
 
         </div>
     );
 };
 
-ProductsDetailsCard.propTypes = {
+AllProductsCard.propTypes = {
     product: PropTypes.object
 };
 
-export default ProductsDetailsCard;
+export default AllProductsCard;

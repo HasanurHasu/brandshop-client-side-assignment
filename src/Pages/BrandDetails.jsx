@@ -36,7 +36,7 @@ const BrandDetails = () => {
                             </div>
                         </div>
                         <hr />
-                        <div className="grid grid-cols-3 gap-5 mt-8">
+                        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 mt-8 mx-4">
                             {
                                 filterProducts.map(product => <ProductsDetailsCard key={product._id} product={product}></ProductsDetailsCard>)
                             }

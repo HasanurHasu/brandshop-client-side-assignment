@@ -1,6 +1,7 @@
+import AllProducts from "./AllProducts";
 import Banner from "./Banner";
 import BrandItems from "./BrandItems";
-import Footer from "./Footer";
+import Subscribe from "./Subscribe";
 
 
 const Home = () => {
@@ -8,7 +9,8 @@ const Home = () => {
         <div className="max-w-6xl mx-auto">
             <Banner></Banner>
             <BrandItems></BrandItems>
-            <Footer></Footer>
+            <AllProducts></AllProducts>
+            <Subscribe></Subscribe>
         </div>
     );
 };

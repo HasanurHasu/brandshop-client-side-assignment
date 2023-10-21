@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
-import { AiFillEye } from 'react-icons/ai';
-import { BiSolidPencil } from 'react-icons/bi';
-import { MdDelete } from 'react-icons/md';
-import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
 
 const ProductsCard = ({ product, count }) => {
-    const { _id, name, description, image } = product;
+    const {  name, description, image } = product;
     return (
         <div id={`item${count + 1}`} className="carousel-item w-full">
             <div className="hero">
@@ -24,7 +19,8 @@ const ProductsCard = ({ product, count }) => {
 };
 
 ProductsCard.propTypes = {
-    product: PropTypes.object
+    product: PropTypes.object,
+    count: PropTypes.number
 };
 
 export default ProductsCard;

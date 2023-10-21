@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/Provider";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
 
-    const {userLoginWithEmail} = useContext(AuthContext);
+    const {userLoginWithEmail, singInWithGoogle} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -24,6 +25,20 @@ const Login = () => {
             console.log(error.message);
         })
     }
+
+    const handleWithLogin = () =>{
+        singInWithGoogle()
+        .then(result => {
+            console.log(result.user);
+            navigate(location?.state ? location.state : '/')
+        })
+        .catch(error => {
+            console.log(error.message);
+            toast.error('Login failed, Try again later')
+    
+        })
+        
+       }
     
     return (
         <div className="w-80 mx-auto">
@@ -44,16 +59,10 @@ const Login = () => {
                 <div className="h-[0.5px] bg-gray-400 w-full"></div>
             </div>
             <div className="flex flex-col gap-4">
-            <button className=" w-full">
+            <button onClick={handleWithLogin} className=" w-full">
                 <div className="flex items-center justify-center gap-4 border border-blue-600 hover:bg-blue-600 hover:transition-colors hover:text-white rounded-lg transition ease-in-out delay-150 duration-100">
                     <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="" className="w-7 py-2" />
                     <p>Continue with Google</p>
-                </div>
-            </button>
-            <button className=" w-full">
-                <div className="flex items-center justify-center gap-4 border border-blue-600 hover:bg-blue-600 hover:transition-colors hover:text-white rounded-lg transition ease-in-out delay-150 duration-100">
-                    <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="" className="w-7 py-2" />
-                    <p>Continue with GitHub</p>
                 </div>
             </button>
             </div>
