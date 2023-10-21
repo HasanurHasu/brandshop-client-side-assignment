@@ -11,7 +11,7 @@ const ProductsDetails = () => {
     const {  name, brand, type, price, description, image } = product;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/products/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -20,7 +20,7 @@ const ProductsDetails = () => {
 
         const addToCard = {name, brand, type, price, description, image, userEmail };
         console.log(addToCard);
-        fetch('http://localhost:5000/addToCard', {
+        fetch('https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/addToCard', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

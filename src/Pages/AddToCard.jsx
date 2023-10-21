@@ -9,7 +9,7 @@ const AddToCard = () => {
     const [loadedMyCard, setLoadedMyCard] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/addToCard/')
+        fetch('https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/addToCard/')
             .then(res => res.json())
             .then(data => setLoadedMyCard(data))
     }, [])
