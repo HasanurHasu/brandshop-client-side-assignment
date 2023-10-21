@@ -16,6 +16,7 @@ import Provider from './Provider/Provider';
 import ProductsDetails from './Pages/ProductsDetails';
 import UpdateProduct from './Pages/UpdateProduct';
 import AddToCard from './Pages/AddToCard';
+import PrivateRoute from './Pages/Route/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -41,19 +42,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/addProducts',
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path: '/productDetails/:id',
-        element: <ProductsDetails></ProductsDetails>
+        element: <PrivateRoute><ProductsDetails></ProductsDetails></PrivateRoute>
       },
       {
         path: 'productUpdate/:id',
-        element: <UpdateProduct></UpdateProduct>
+        element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>
       },
       {
         path: 'myCard',
-        element: <AddToCard></AddToCard>
+        element: <PrivateRoute><AddToCard></AddToCard></PrivateRoute>
       }
     ]
   },

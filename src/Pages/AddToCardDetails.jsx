@@ -45,8 +45,8 @@ const AddToCardDetails = ({ myCard }) => {
     return (
         <div className="my-6">
             <div className="flex justify-center gap-10">
-                    <div className='flex justify-center items-center'>
-                        <img src={image} className="w-40" />
+                    <div className='flex justify-between items-center'>
+                        <img src={image} className="h-32" />
                     </div>
                     <div className='flex flex-col justify-center'>
                         <h1 className="text-2xl font-bold">{name}</h1>

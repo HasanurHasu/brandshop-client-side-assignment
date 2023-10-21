@@ -9,11 +9,22 @@ const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
 
     const links = <>
-        <NavLink className="py-2 px-5" to='/'>Home</NavLink>
-        <NavLink className="py-2 px-5" to='/register'>Register</NavLink>
-        <NavLink className="py-2 px-5" to='/login'>Login</NavLink>
-        <NavLink className="py-2 px-5" to='/addProducts'>Add Product</NavLink>
-        <NavLink className="py-2 px-5" to='/myCard'>My Card</NavLink>
+        {
+            user ? <>
+                <NavLink className="py-2 px-5" to='/'>Home</NavLink>
+                <NavLink className="py-2 px-5" to='/register'>Register</NavLink>
+                <NavLink className="py-2 px-5" to='/login'>Login</NavLink>
+                <NavLink className="py-2 px-5" to='/addProducts'>Add Product</NavLink>
+                <NavLink className="py-2 px-5" to='/myCard'>My Card</NavLink>
+            </> :
+
+                <>
+                    <NavLink className="py-2 px-5" to='/'>Home</NavLink>
+                    <NavLink className="py-2 px-5" to='/register'>Register</NavLink>
+                    <NavLink className="py-2 px-5" to='/login'>Login</NavLink>
+                </>
+        }
+
     </>
     return (
         <div className="navbar max-w-6xl mx-auto">
@@ -50,11 +61,11 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </>
-                    :
-                    <>
-                    <button>Login</button>
-                    
-                    </>
+                        :
+                        <>
+                            <Link to='/login'><button>Login</button></Link>
+
+                        </>
                 }
 
             </div>

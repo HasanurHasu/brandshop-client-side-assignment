@@ -13,24 +13,36 @@ const BrandDetails = () => {
     const filterProducts = products.filter(product => product.type.toLowerCase() === id.toLowerCase());
     return (
         <div className="max-w-6xl mx-auto mt-8">
-            <div className="my-8">
-                <div className="carousel w-full">
-                    {
-                        filterProducts.map((product, idx) => <ProductsCard count={idx} key={product._id} product={product}></ProductsCard>)
-                    }
-                </div>
-                <div className="flex justify-center w-full py-2 gap-2">
-                    {
-                        filterProducts.map((product, idx) => <a key={idx} href={`#item${idx + 1}`} className="btn btn-xs">{idx + 1}</a>)
-                    }
-                </div>
-            </div>
-            <hr />
-            <div className="grid grid-cols-3 gap-5 mt-8">
-                {
-                    filterProducts.map(product => <ProductsDetailsCard key={product._id} product={product}></ProductsDetailsCard>)
-                }
-            </div>
+            {
+                filterProducts.length == 0 ? <>
+                    <div className="">
+                        <div className="flex justify-center items-center h-screen">
+                            <h1 className="text-center text-4xl font-bold">Cumming Soon..</h1>
+                        </div>
+                    </div>
+                </>
+                    :
+                    <>
+                        <div className="my-8">
+                            <div className="carousel w-full">
+                                {
+                                    filterProducts.map((product, idx) => <ProductsCard count={idx} key={product._id} product={product}></ProductsCard>)
+                                }
+                            </div>
+                            <div className="flex justify-center w-full py-2 gap-2">
+                                {
+                                    filterProducts.map((product, idx) => <a key={idx} href={`#item${idx + 1}`} className="btn btn-xs">{idx + 1}</a>)
+                                }
+                            </div>
+                        </div>
+                        <hr />
+                        <div className="grid grid-cols-3 gap-5 mt-8">
+                            {
+                                filterProducts.map(product => <ProductsDetailsCard key={product._id} product={product}></ProductsDetailsCard>)
+                            }
+                        </div>
+                    </>
+            }
         </div>
     );
 };

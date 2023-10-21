@@ -8,7 +8,7 @@ const ProductsDetailsCard = ({ product }) => {
 
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={image} alt="Shoes" className="rounded-xl" />
+                <img src={image} alt="Shoes" className="h-40 rounded-xl" />
             </figure>
             <div className="p-10 space-y-3 items-start">
                 <h2 className="card-title">{name}</h2>
