@@ -15,6 +15,7 @@ import AddProduct from './Pages/AddProduct';
 import Provider from './Provider/Provider';
 import ProductsDetails from './Pages/ProductsDetails';
 import UpdateProduct from './Pages/UpdateProduct';
+import MyCard from './Pages/MyCard';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: 'productUpdate/:id',
         element: <UpdateProduct></UpdateProduct>
+      },
+      {
+        path: 'myCard',
+        element: <MyCard></MyCard>
       }
     ]
   },
