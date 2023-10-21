@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/Provider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,6 +9,8 @@ const Register = () => {
 
 
     const { userRegister } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleRegister = event => {
         event.preventDefault();
@@ -34,6 +36,7 @@ const Register = () => {
         userRegister(email, password)
             .then(result => {
                 console.log(result.user);
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error.message)
