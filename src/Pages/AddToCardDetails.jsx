@@ -17,7 +17,7 @@ const AddToCardDetails = ({ myCard }) => {
             confirmButtonText: 'Yes, delete it!'
               }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/addToCard/${_id}`, {
+                    fetch(`https://brand-shop-server-eta-puce.vercel.app/addToCard/${_id}`, {
                         method: 'DELETE'
                     })
                     .then(res => res.json())

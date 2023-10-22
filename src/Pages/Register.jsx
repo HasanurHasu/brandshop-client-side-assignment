@@ -40,22 +40,25 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error.message)
+                const RegError = error.message
+                toast.error(`${RegError}`)
             })
     }
 
-    const handleReg = () =>{
+    const handleReg = () => {
         singInWithGoogle()
-        .then(result => {
-            console.log(result.user);
-            navigate(location?.state ? location.state : '/')
-        })
-        .catch(error => {
-            console.log(error.message);
-            toast.error('Login failed, Try again later')
-    
-        })
-        
-       }
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error.message);
+                const RegError = error.message
+                toast.error(`${RegError}`)
+
+            })
+
+    }
 
     return (
         <div className="w-80 mx-auto">
@@ -82,7 +85,7 @@ const Register = () => {
                         <p>Continue with Google</p>
                     </div>
                 </button>
-                
+
             </div>
             <ToastContainer
                 position="top-center"

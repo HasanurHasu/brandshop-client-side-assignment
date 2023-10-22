@@ -12,7 +12,7 @@ const UpdateProduct = () => {
     const {  name, brand, type, price, description, image, rating } = product;
 
     useEffect(() => {
-        fetch(`https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/products/${id}`)
+        fetch(`https://brand-shop-server-eta-puce.vercel.app/products/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -32,7 +32,7 @@ const UpdateProduct = () => {
         const UpdateProduct = { name, brand, type, price, description, rating, image }
         console.log(UpdateProduct);
 
-        fetch(`https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/products/${id}`, {
+        fetch(`https://brand-shop-server-eta-puce.vercel.app/products/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

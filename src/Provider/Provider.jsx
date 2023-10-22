@@ -35,7 +35,7 @@ const Provider = ({ children }) => {
 
 
     useEffect(() => {
-        fetch('https://brand-shop-server-anuj0lnx6-hasanur-rahmans-projects.vercel.app/products')
+        fetch('https://brand-shop-server-eta-puce.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
