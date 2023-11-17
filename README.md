@@ -1,10 +1,10 @@
 
-# Brand Shop
+# Restaurant Management
 
 
 
 
- - [Assinments Live Link](https://brand-shop-28eb0.web.app/)
+ - [Assinments Live Link](https://restaurant-management-88cad.web.app/)
 
  ## Project Features
  - Online Database System.
@@ -12,6 +12,6 @@
  - Users can add products.
  - Private Route.
  - Customize 404 page.
- - User can remove the addToCard list.
+ - User can remove the Order.
  - User can update products.
 
